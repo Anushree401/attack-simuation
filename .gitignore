@@ -1,0 +1,25 @@
+# Compiled C++ binaries and executables
+flood_engine
+*.out
+*.exe
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+
+# Logs and environment files
+*.log
+.env
+.env.*
+
+# Editor and IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db

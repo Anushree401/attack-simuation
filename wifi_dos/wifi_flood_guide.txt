@@ -1,0 +1,33 @@
+to compile .cpp code to machine binary
+g++ -O3 wifi_flood.cpp -o wifi_engine -lpcap
+
+run the wifi lab setup first 
+sudo ./run_wifi_lab.sh
+
+to run deauth flood -- targetting client connectivity
+sudo ./wifi_engine wlan0 deauth 00:11:22:33:44:55 AA:BB:CC:DD:EE:FF
+if the attack is deauth flood, then spoofed management commands stating 
+"I am the Router, and I am kicking you off the network" are spammed continuously
+and the client HAS to drop its connection
+THE MAIN SYMPTOM IS Instant Wi-Fi Disconnection
+WIRELESS DEFENSE IS Protected Management Frames (PMF / 802.11w)
+
+to run disassoc flood -- targetting authentication link state
+sudo ./wifi_engine wlan0 disassoc 00:11:22:33:44:55 AA:BB:CC:DD:EE:FF
+if the attack is disassoc flood, then notification frames stating 
+"I am a client device, and I am leaving the network" are sent to break the link state
+so since the link is broken the client falls back to an unauthenticated loop... 
+every request forces a re-auth sequence
+so we fire large blocks of spoofed disconnect notifications
+THE MAIN SYMPTOM IS Looping Connection Status
+WIRELESS DEFENSE IS WPA3 Encryption Standards (mandates PMF)
+
+to run beacon flood -- targetting wireless scanning menus
+sudo ./wifi_engine wlan0 beacon "FREE_AIRPORT_WIFI"
+if the attack is beacon flood, then thousands of fake access point advertisement 
+frames are treated as a hardware scanning interrupt
+so for each advertisement the client MUST parse the network configuration
+hence, say 5 lakh advertisements come together then a scanning overload is 
+triggered and Wi-Fi menus immediately freeze
+THE MAIN SYMPTOM IS Frozen Local Wireless Menus
+WIRELESS DEFENSE IS Client-Side Signal Strength Filtering

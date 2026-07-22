@@ -1,0 +1,27 @@
+# Compiled binaries and build artifacts
+flood_engine
+*.out
+*.exe
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+
+# Logs and runtime artifacts
+*.log
+*.pcap
+*.tmp
+.env
+.env.*
+
+# Editor & IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db

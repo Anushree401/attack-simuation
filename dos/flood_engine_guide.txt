@@ -1,5 +1,5 @@
 to run ubuntu server 
-ssh dell-ubuntu@192.168.122.8
+ssh dell-ubuntu@192.168.122.148
 password: ssh auth is enabled so i wont write it here
 note: make sure it is working in background, by doing virsh list --all
 if the server is shut off run it by doing virsh start ubuntu25.10
@@ -13,14 +13,14 @@ to compile .cpp code to machine binary
 g++ -O3 -pthread flood_engine.cpp -o flood_engine
 
 to run tcp syn flood -- targetting handshake queue
-sudo ./flood_engine 192.168.122.8 8080 8 tcp
+sudo ./flood_engine 192.168.122.148 8080 8 tcp
 if the attack is tcp syn flood, then syn packets are spammed from random fake ip addresses
 and the server HAS to respond to all of them
 THE MAIN SYMPTOM IS high Semi-Open (SYN-RECV) 
 KERNEL DEFENSE IS SYN Cookies (intercepts queue floods)
 
 to run udp flood -- targetting network bandwidth
-sudo ./flood_engine 192.168.122.8 8080 8 udp
+sudo ./flood_engine 192.168.122.148 8080 8 udp
 if the attack is upd flood, then a lot of fire and forget, handshakeless messages
 are fired. 
 so since no handshake the server cant just drop the packets... every packet is pulled
@@ -30,7 +30,7 @@ THE MAIN SYMPTOM IS High Interface Dropped
 KERNEL DEFENSE IS Packet Dropping (discards buffer overflows)
 
 to run icmp flood -- targetting cpu core
-sudo ./flood_engine 192.168.122.8 8080 8 icmp
+sudo ./flood_engine 192.168.122.148 8080 8 icmp
 if the attack is icmp flood, then each icmp ping req is treated as a 
 software interrupt.
 so for each req the server MUST reply to it 

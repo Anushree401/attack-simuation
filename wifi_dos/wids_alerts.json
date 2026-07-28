@@ -1,0 +1,4 @@
+{"timestamp":"2026-07-25 03:15:34","alert_id":"WIDS-L2-LATENCY-ALERT","protocol_layer":"802.11_MAC","detected_anomalies":4,"window_seconds":5}
+{"timestamp":"2026-07-25 03:15:39","alert_id":"WIDS-L2-LATENCY-ALERT","protocol_layer":"802.11_MAC","detected_anomalies":4,"window_seconds":5}
+{"timestamp":"2026-07-25 03:15:44","alert_id":"WIDS-L2-LATENCY-ALERT","protocol_layer":"802.11_MAC","detected_anomalies":4,"window_seconds":5}
+{"timestamp":"2026-07-25 03:15:49","alert_id":"WIDS-L2-LATENCY-ALERT","protocol_layer":"802.11_MAC","detected_anomalies":4,"window_seconds":5}
